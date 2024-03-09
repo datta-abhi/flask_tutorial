@@ -1,6 +1,9 @@
 from flask import Flask,render_template,request
+from db import *
 
 app = Flask(__name__)
+
+dbo = Database()
 
 @app.route('/')
 def index():
@@ -16,6 +19,12 @@ def perform_registration():
     name = request.form.get('username')
     email = request.form.get('useremail')
     password = request.form.get('password')
-    return name + email + password
+
+    response = dbo.insert(name,email,password)
+
+    if response == 1:
+        return "Registration successful"
+    else:
+        return "email already registered"
 
 app.run(debug=True)
