@@ -14,17 +14,22 @@
 
 <!--Login Section-->
     <h3>Login here </h3>
-    <form>
+
+    {% if message %}
+    <p> {{ message }}</p>
+    {% endif %}
+
+    <form action="/perform_login" method="post">
 <!--        email input-->
         <label> Email</label><br>
-        <input type="email"><br>
+        <input type="email" name="useremail"><br>
 
 <!--        password input-->
         <label> Password</label><br>
-        <input type="password"><br><br>
+        <input type="password" name="password"><br><br>
 
 <!--        Login Button-->
-        <input type="button" value="Click to Register"><br>
+        <input type="Submit" value="Click to Login"><br>
     </form>
 <!--Registration Link-->
     <p>Not a Member <a href="/register">Register here</a></p>
