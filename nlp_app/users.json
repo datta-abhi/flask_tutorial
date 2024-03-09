@@ -1,1 +1,10 @@
-{}
+{
+   "john.doe@gmail.com": [
+      "john",
+      "john_doe"
+   ],
+   "ajay.devgan@gmail.com": [
+      "ajay devgan",
+      "ajay_devgan"
+   ]
+}
